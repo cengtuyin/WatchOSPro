@@ -1,13 +1,13 @@
 {
     "name": "我太想努力了",
-    "icon": "http://watch.24h.fyi:90/img/AppStore/ITooWantProgress/icon.png",
+    "icon": "src/img/AppStore/ITooWantProgress/icon.png",
     "pak": "com.microsoft.rdc.android",
     "version name": "1.0",
     "version code": "1",
     "app image": [
-        "http://watch.24h.fyi:90/img/AppStore/ITooWantProgress/App_1.png",
-        "http://watch.24h.fyi:90/img/AppStore/ITooWantProgress/App_2.png",
-        "http://watch.24h.fyi:90/img/AppStore/ITooWantProgress/App_3.png"
+        "src/img/AppStore/ITooWantProgress/App_1.png",
+        "src/img/AppStore/ITooWantProgress/App_2.png",
+        "src/img/AppStore/ITooWantProgress/App_3.png"
     ],
     "label": [
         {
@@ -27,5 +27,5 @@
     "description": "yin开发的学习软件",
     "tbrief description":"英语记单词",
     "update time": "2024年11月7日",
-    "download url": "http://watch.24h.fyi:90/apk/AppStore/ITooWantProgress/ITooWantProgress.apk"
+    "download url": "src/apk/AppStore/ITooWantProgress/ITooWantProgress.apk"
 }
