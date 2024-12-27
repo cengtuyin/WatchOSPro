@@ -1,0 +1,64 @@
+<mdui-dialog id="tipsview" headline="免责协议" class="example-action">
+    <div id="loadview" style="width:100%;height:10vh;max-height:200px;min-height:100px;display: flex;justify-content: center;align-items: center;"><mdui-circular-progress></mdui-circular-progress></div>
+    <mdui-button slot="action" variant="text" onclick="dialog.open = false">取消</mdui-button>
+    <mdui-button slot="action" onclick="dialog.open = false">同意协议并下载应用</mdui-button>
+</mdui-dialog>
+<script type="text/javascript">
+var dialog = document.getElementById("tipsview");
+
+function Download() {
+    dialog.description = "";
+    document.getElementById("loadview").style.display = "flex";
+    dialog.open = true;
+    setTimeout(() => {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', './DisclaimerAgreement.txt', true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var json = httpRequest.responseText;
+                document.getElementById("loadview").style.display = "none";
+                dialog.description = json;
+            }
+        };
+    }, 500);
+}
+</script>
+<div style="text-align: center;margin:2.4em 0 50px 0;">
+    <h1 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">常见问题</h1>
+    <h3 id="titleview" style="padding:0;margin:1em;color:rgb(var(--mdui-color-on-surface-variant));">Loading</h3>
+</div>
+
+<script type="text/javascript">
+function getQueryString(name) {
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+var r = window.location.search.substr(1).match(reg);
+if (r != null) return unescape(r[2]); return null;
+} 
+
+var QAcode = GetQueryString("QAcode");
+document.getElementById("titleview").innerHTML=QAcode;
+LoadMainUI("../html/main/QA/"+QAcode+".html");
+/*
+var httpRequest = new XMLHttpRequest();
+httpRequest.open('GET', "../html/main/QA/"+QAcode+".html", true);
+httpRequest.send();
+httpRequest.onreadystatechange = function () {
+    if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+        const ui=httpRequest.responseText;
+        if(ui=="404 Error"){
+            ui="该教程不存在！";
+        }
+        document.getElementById("main").innerHTML=ui;
+        codejstemp=LoadJS();
+        document.getElementById("loadingview").style.display="none";
+    }else{
+        document.getElementById("main").innerHTML="请求异常，无法加载界面";
+        document.getElementById("loadingview").style.display="none";
+        //snackbar({message: "请求错误，请稍候重试",closeOnOutsideClick: true,autoCloseDelay: 1500});
+    }
+    CloseLoadUILoadview();
+};
+document.getElementById("titleview").innerHTML=QAcode;
+*/
+</script>

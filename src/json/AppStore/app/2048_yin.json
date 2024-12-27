@@ -1,0 +1,19 @@
+{
+    "name": "2048",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/2048_yin/icon.png",
+    "pak": "org.scoutant.game2048",
+    "version name": "2.1",
+    "version code": "9",
+    "app image": [
+        "http://watch.24h.fyi:90/img/AppStore/2048_yin/App_1.png",
+        "http://watch.24h.fyi:90/img/AppStore/2048_yin/App_2.png",
+        "http://watch.24h.fyi:90/img/AppStore/2048_yin/App_3.png",
+        "http://watch.24h.fyi:90/img/AppStore/2048_yin/App_4.png",
+        "http://watch.24h.fyi:90/img/AppStore/2048_yin/App_5.png"
+    ],
+    "author": "yin",
+    "description": "该版本由yin修改",
+    "tbrief description":"暗色版",
+    "update time": "2024年11月7日",
+    "download url": "http://watch.24h.fyi:90/apk/AppStore/2048_yin/2048_yin.apk"
+}

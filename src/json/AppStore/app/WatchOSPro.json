@@ -1,0 +1,27 @@
+{
+    "name":"WatchOSPro",
+    "icon":"http://watch.24h.fyi:90/img/icon.png",
+    "pak":"com.WatchOS.Pro.yin",
+    "version name":"alpha",
+    "version code":"19",
+    "app image":[
+        "http://watch.24h.fyi:90/img/AppStore/WatchOSPro/App_1.png",
+        "http://watch.24h.fyi:90/img/AppStore/WatchOSPro/App_2.png",
+        "http://watch.24h.fyi:90/img/AppStore/WatchOSPro/App_3.png",
+        "http://watch.24h.fyi:90/img/AppStore/WatchOSPro/App_4.png"
+    ],
+    "label": [
+        {
+            "icon": "android",
+            "msg": "64位"
+        },
+        {
+            "icon": "gpp_good",
+            "msg": "官方"
+        }
+    ],
+    "author":"yin",
+    "description":"提供互联功能的手表桌面软件，搭配手机端MyWatchOSPro食用",
+    "update time":"2024年11月7日",
+    "download url":"http://watch.24h.fyi:90/apk/AppStore/WatchOSPro/WatchOSPro.apk"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "搜狗输入法",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/SouGou/icon.png",
+    "pak": "com.sohu.inputmethod.sogou",
+    "version name": "10.19.1",
+    "version code": "1352",
+    "app image": [
+        "http://watch.24h.fyi:90/img/AppStore/SouGou/App_1.png"
+    ],
+    "author": "yin",
+    "description": "DW99自带的版本",
+    "tbrief description":"DW99自带的版本",
+    "update time": "2024年11月7日",
+    "download url":"http://watch.24h.fyi:90/apk/AppStore/SouGou/SouGou.apk"
+}

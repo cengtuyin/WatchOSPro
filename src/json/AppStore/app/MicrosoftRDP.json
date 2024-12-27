@@ -1,0 +1,17 @@
+{
+    "name": "微软远程桌面",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/MicrosoftRDP/icon.png",
+    "pak": "com.microsoft.rdc.android",
+    "version name": "8.1.80.431",
+    "version code": "93",
+    "app image": [
+        "http://watch.24h.fyi:90/img/AppStore/MicrosoftRDP/App_1.png",
+        "http://watch.24h.fyi:90/img/AppStore/MicrosoftRDP/App_2.png",
+        "http://watch.24h.fyi:90/img/AppStore/MicrosoftRDP/App_3.png"
+    ],
+    "author": "yin",
+    "description": "该版本由yin修改，适用于安卓版本较低的设备",
+    "tbrief description":"暗色版",
+    "update time": "2024年11月7日",
+    "download url": "http://watch.24h.fyi:90/apk/AppStore/MicrosoftRDP/MicrosoftRDP.apk"
+}

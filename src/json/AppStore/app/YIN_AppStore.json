@@ -1,0 +1,25 @@
+{
+    "name": "YINのAppStore",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/YIN_AppStore/icon.png",
+    "pak": "com.AppStore.yin",
+    "version name": "0.0.2",
+    "version code": "3",
+    "app image": [
+        "http://watch.24h.fyi:90/img/WeChatPay.png",
+        "http://watch.24h.fyi:90/img/AliPay.jpg"
+    ],
+    "label": [
+        {
+            "icon": "android",
+            "msg": "64位"
+        },
+        {
+            "icon": "gpp_good",
+            "msg": "官方"
+        }
+    ],
+    "author": "yin",
+    "description": "你是知道我的😘<br>加入QQ群：982816131<br>关于银的原创软件：在Q群更新更为频繁(测试版本)，应用商店则为正式版本",
+    "update time": "2024年11月11日",
+    "download url":"http://watch.24h.fyi:90/apk/AppStore/YIN_AppStore/YIN_AppStore.apk"
+}

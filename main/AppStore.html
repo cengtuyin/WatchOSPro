@@ -1,0 +1,132 @@
+<mdui-dialog id="tipsview" class="example-action">
+    <mdui-top-app-bar slot="header">
+        <mdui-avatar id="tipsview_icon" src="http://q.qlogo.cn/headimg_dl?dst_uin=3435691746&spec=640&img_type=jpg"></mdui-avatar>
+        <mdui-top-app-bar-title id="tipsview_title">Loading</mdui-top-app-bar-title>
+    </mdui-top-app-bar>
+    <div id="loadview" style="width:100%;height:10vh;max-height:200px;min-height:100px;display: flex;justify-content: center;align-items: center;"><mdui-circular-progress></mdui-circular-progress></div>
+    <div id="tipsview_appinfo">
+        <div style="margin-left:0.5em;display:block;">
+            <mdui-chip icon="android" style="margin:0.2em;" onclick="event.stopPropagation();document.getElementById('zwms').open=true;">64位</mdui-chip><mdui-chip icon="gpp_good" style="margin:0.2em;" onclick="event.stopPropagation();document.getElementById('hz').open=true;">官方</mdui-chip>
+        </div>
+    </div>
+    <mdui-button slot="action" variant="text" onclick="dialog.open = false">取消</mdui-button>
+    <mdui-button slot="action" onclick="dialog.open = false">下载</mdui-button>
+</mdui-dialog>
+<mdui-dialog id="load_tipsview" headline="数据加载中" description="获取应用列表" class="example-action">
+    <!--<div id="loadview" style="width:100%;height:10vh;max-height:200px;min-height:100px;display: flex;justify-content: center;align-items: center;"><mdui-circular-progress></mdui-circular-progress></div>-->
+</mdui-dialog>
+<script type="text/javascript">
+    var dialog = document.getElementById("tipsview");
+    var load_dialog = document.getElementById("load_tipsview");
+    var applist = [
+        {
+            "name":"WatchOSPro",
+            "pak":"com.WatchOS.Pro.yin",
+            "main_context":"手表手机互联！",
+            "label":[
+                {
+                    "icon":"android",
+                    "msg":"64位"
+                },
+                {
+                    "icon":"gpp_good",
+                    "msg":"官方"
+                }
+            ]
+        }
+    ];
+    setTimeout(() => {
+        load_dialog.open = true;
+        LoadAPPList();
+    }, 1);
+    function LoadAppInfo(id) {
+        document.getElementById("tipsview_title").innerHTML = applist[id].name;
+        document.getElementById("tipsview_icon").src=applist[id].icon;
+        document.getElementById("loadview").style.display = "flex";
+        document.getElementById("tipsview_appinfo").style.display = "none";
+        dialog.open = true;
+        setTimeout(() => {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.open('GET', './DisclaimerAgreement.txt', true);
+            httpRequest.send();
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                    document.getElementById("loadview").style.display = "none";
+                    document.getElementById("tipsview_appinfo").style.display = "block";
+                    return;
+                    dialog.description = httpRequest.responseText;
+                }
+            };
+        }, 500);
+    }
+
+    function LoadAPPList(type="all"){
+        applist.splice(0);
+        var T_nowappid = 0;
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', './AppStore/AppList.json', true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var T_applist = JSON.parse(httpRequest.responseText);
+                T_applist.forEach(appdata => {
+                    var httpRequest = new XMLHttpRequest();
+                    httpRequest.open('GET', './AppStore/app/'+appdata+'.json', true);
+                    httpRequest.send();
+                    httpRequest.onreadystatechange = function() {
+                        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                            var T_appdata = JSON.parse(httpRequest.responseText);
+                            applist.push(T_appdata);
+                            T_nowappid++;
+                            load_dialog.description = "获取应用数据("+T_nowappid+"/"+T_applist.length+")";
+                            if(T_nowappid>=T_applist.length) IfLoadAppList();
+                        }
+                    };
+                })
+            }
+        };
+    }
+    
+    function IfLoadAppList(){
+        document.getElementById("applistview").innerHTML = "";
+        var T_nowappid = 0;
+        applist.forEach(appdata => {
+            var description = appdata["version name"]+"("+appdata["version code"]+")";
+            //var description = appdata.pak;
+            if(appdata["tbrief description"]){
+                description = appdata["tbrief description"];
+            }
+            var view = "<mdui-card onclick='LoadAppInfo("+T_nowappid+");' variant='outlined' style='margin:0.5em 5% 0.5em 5%;padding:1em 1em 0.6em 1em;width:90%;display:flex;'><mdui-avatar style='width:3em;height:3em;' src='"+appdata.icon+"'></mdui-avatar><div style='margin-left:0.5em;display:block;'><h3 style='padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));'>"+appdata.name+"</h3><h5 style='padding:0;margin:0 0 0.4em 0;color:rgb(var(--mdui-color-on-surface-variant));'>"+description+"</h5>";
+            if(appdata.label){
+                appdata.label.forEach(labeldata => {
+                    view = view+"<mdui-chip icon='"+labeldata.icon+"' style='margin:0.2em;'>"+labeldata.msg+"</mdui-chip>";
+                })
+            }
+            document.getElementById("applistview").insertAdjacentHTML("beforeend",view+"</div></mdui-card>");
+            T_nowappid++;
+            load_dialog.description = "渲染应用列表("+T_nowappid+"/"+applist.length+")";
+        })
+        setTimeout(() => {
+            load_dialog.open = false;
+        }, 500);
+    }
+</script>
+<div style="text-align: center;margin:2.4em 0 50px 0;">
+    <h1 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">AppStore</h1>
+    <h3 style="padding:0;margin:1em;color:rgb(var(--mdui-color-on-surface-variant));">手表相关应用推荐，让我们共建生态</h3>
+    <div style="width:100%;text-align: center;display:flex;flex-direction: column;justify-content: center;align-items: center;">
+        <mdui-chip icon="search" onclick="document.getElementById('payforyin').open=true;">114514次搜索</mdui-chip>
+        <mdui-text-field style="margin:8% 8% 0 8%;width:84%;max-width:260px;" variant="outlined" label="搜索应用"></mdui-text-field>
+    </div>
+</div>
+<h3 style="width:100%;text-align: center;padding:0;margin-top:3em;color:rgb(var(--mdui-color-on-surface-variant));">- 搜索结果 -</h3>
+<div id="applistview">
+    <!--<mdui-card onclick="LoadAppInfo(0);" variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em 1em 0.6em 1em;width:90%;display:flex;">
+        <mdui-avatar style="width:3em;height:3em;" src="http://q.qlogo.cn/headimg_dl?dst_uin=3435691746&spec=640&img_type=jpg"></mdui-avatar>
+        <div style="margin-left:0.5em;display:block;">
+            <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">WatchOSPro</h3>
+            <h5 style="padding:0;margin:0 0 0.4em 0;color:rgb(var(--mdui-color-on-surface-variant));">手表手机互联！</h5>
+            <mdui-chip icon="android" style="margin:0.2em;" onclick="event.stopPropagation();document.getElementById('zwms').open=true;">64位</mdui-chip><mdui-chip icon="gpp_good" style="margin:0.2em;" onclick="event.stopPropagation();document.getElementById('hz').open=true;">官方</mdui-chip>
+        </div>
+    </mdui-card>-->
+</div>

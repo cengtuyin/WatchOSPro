@@ -1,0 +1,24 @@
+{
+    "WatchOS Pro":{
+        "version":[114514],
+        "update":[
+            {
+                "name":"Debug",
+                "code":114514,
+                "url":"http://watch.24h.fyi:90/",
+                "msg":"NULL"
+            }
+        ]
+    },
+    "My WatchOS Pro":{
+        "version":[114514],
+        "update":[
+            {
+                "name":"Debug",
+                "code":114514,
+                "url":"http://watch.24h.fyi:90/",
+                "msg":"NULL"
+            }
+        ]
+    }
+}

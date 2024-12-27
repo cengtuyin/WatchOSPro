@@ -1,0 +1,33 @@
+<script type="text/javascript">
+var dialog = document.getElementById("tipsview");
+
+function about() {
+    mdui.alert({
+      headline: "关于",
+      description: "有经济来源才能让开发者们更积极的维护项目，因为这说明他日日夜夜编出来的史山正在被人期待着，他的努力没有白费",
+      confirmText: "OK",
+      onConfirm: () => console.log("confirmed"),
+    });
+}
+</script>
+<div style="text-align: center;margin:2.4em 0 50px 0;">
+    <h1 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">WatchOS</h1>
+    <h3 style="padding:0;margin:1em;color:rgb(var(--mdui-color-on-surface-variant));">手机手表互联以及应用商店一体化站点</h3>
+    <div style="margin:2em 0 0.8em 0;">
+        <mdui-button style="margin:0.2em;" onclick="about()">关于</mdui-button>
+        <!--<mdui-button variant="text">联系我们</mdui-button>-->
+    </div>
+    <mdui-button variant="text">QQ群：982816131</mdui-button>
+</div>
+<mdui-card variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em;width:90%;">
+    <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">WatchOS Pro</h3>
+    <h5 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">手机手表互联软件，共创手表生态</h5>
+</mdui-card>
+<mdui-card variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em;width:90%;">
+    <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">应用商店</h3>
+    <h5 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">开放使用的应用商店，注册后即可上传分享应用，下载免登录</h5>
+</mdui-card>
+<mdui-card variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em;width:90%;">
+    <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">云服务</h3>
+    <h5 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">相对于WatchOS Pro的Web管理，需开启对应功能才可用</h5>
+</mdui-card>

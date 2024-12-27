@@ -1,0 +1,14 @@
+{
+    "name": "智学网Lite",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/SomeOnlineLite/icon.png",
+    "pak": "we.zxlite",
+    "version name": "1.0",
+    "version code": "1",
+    "app image": [
+        "http://watch.24h.fyi:90/img/AppStore/SomeOnlineLite/App_1.png"
+    ],
+    "author": "yin",
+    "description": "考试查分软件",
+    "update time": "2024年11月7日",
+    "download url":"http://watch.24h.fyi:90/apk/AppStore/SomeOnlineLite/SomeOnlineLite.apk"
+}

@@ -1,0 +1,48 @@
+<mdui-dialog id="tipsview" headline="免责协议" class="example-action">
+    <div id="loadview" style="width:100%;height:10vh;max-height:200px;min-height:100px;display: flex;justify-content: center;align-items: center;"><mdui-circular-progress></mdui-circular-progress></div>
+    <mdui-button slot="action" variant="text" onclick="dialog.open = false">取消</mdui-button>
+    <mdui-button slot="action" onclick="dialog.open = false">同意协议并下载应用</mdui-button>
+</mdui-dialog>
+<script type="text/javascript">
+var dialog = document.getElementById("tipsview");
+
+function Download() {
+    dialog.description = "";
+    document.getElementById("loadview").style.display = "flex";
+    dialog.open = true;
+    setTimeout(() => {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', './DisclaimerAgreement.txt', true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var json = httpRequest.responseText;
+                document.getElementById("loadview").style.display = "none";
+                dialog.description = json;
+            }
+        };
+    }, 500);
+}
+</script>
+<div style="text-align: center;margin:2.4em 0 50px 0;">
+    <h1 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">WatchOS <font color="rgb(var(--mdui-color-inverse-primary))">·</font> Pro</h1>
+    <h3 style="padding:0;margin:1em;color:rgb(var(--mdui-color-on-surface-variant));">面向与手表手机互联的第三方安卓应用</h3>
+    <div style="margin:2em 0 0.8em 0;">
+        <mdui-button style="margin:0.2em;" onclick="Download();">开始使用</mdui-button>
+        <mdui-button style="margin:0.2em;" variant="tonal">关于</mdui-button>
+        <!--<mdui-button variant="text">联系我们</mdui-button>-->
+    </div>
+    <mdui-button variant="text">QQ群：982816131</mdui-button>
+</div>
+<mdui-card variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em;width:90%;">
+    <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">蓝牙通知</h3>
+    <h5 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">使用蓝牙通讯把手机通知转发到手表上</h5>
+</mdui-card>
+<mdui-card variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em;width:90%;">
+    <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">音乐控制</h3>
+    <h5 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">在手表上控制手机音乐播放</h5>
+</mdui-card>
+<mdui-card variant="outlined" style="margin:0.5em 5% 0.5em 5%;padding:1em;width:90%;">
+    <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">辅助拍摄</h3>
+    <h5 style="padding:0;margin:0;color:rgb(var(--mdui-color-on-surface-variant));">Apple Watch“大差不差的体验”，将手机摄像头画面显示到手表，使用手表进行远程拍摄</h5>
+</mdui-card>

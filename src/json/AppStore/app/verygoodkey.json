@@ -1,0 +1,29 @@
+{
+    "name": "更好的快捷键",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/verygoodkey/icon.png",
+    "pak": "com.KeyboardShortcuts.yin",
+    "version name": "1.0",
+    "version code": "1",
+    "app image": [
+        "http://watch.24h.fyi:90/img/AppStore/verygoodkey/App_1.png"
+    ],
+    "label": [
+        {
+            "icon": "android",
+            "msg": "64位"
+        },
+        {
+            "icon": "gpp_good",
+            "msg": "官方"
+        },
+        {
+            "icon": "error",
+            "msg": "已停更"
+        }
+    ],
+    "author": "yin",
+    "description": "绑定您的手表侧键应用，执行自定义的sh脚本。提供更多可能性！",
+    "tbrief description": "拯救侧键？",
+    "update time": "2024年11月7日",
+    "download url": "http://watch.24h.fyi:90/apk/AppStore/verygoodkey/verygoodkey.apk"
+}

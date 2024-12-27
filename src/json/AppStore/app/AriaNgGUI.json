@@ -1,0 +1,17 @@
+{
+    "name": "AriaNgGUI",
+    "icon": "http://watch.24h.fyi:90/img/AppStore/AriaNgGUI/icon.png",
+    "pak": "com.xmader.aria_ng_gui_android",
+    "version name": "1.3.1",
+    "version code": "10301",
+    "app image": [
+        "http://watch.24h.fyi:90/img/AppStore/AriaNgGUI/App_1.png",
+        "http://watch.24h.fyi:90/img/AppStore/AriaNgGUI/App_2.png",
+        "http://watch.24h.fyi:90/img/AppStore/AriaNgGUI/App_3.png"
+    ],
+    "author": "yin",
+    "description": "Aria2 是一款免费开源跨平台且不限速的多线程下载软件，其优点是速度快、体积小、资源占用少；支持 HTTP / FTP / BT / Magnet 磁力链接等类型的文件下载；支持 Win、Mac、Linux 系统，甚至在树莓派、NAS、路由器等设备上都能安装它。强大的地方，结合第三方插件，可以扩展，下载百度网盘等资源，居家下片必备神器。",
+    "tbrief description":"多线程下载器",
+    "update time": "2024年11月7日",
+    "download url":"http://watch.24h.fyi:90/apk/AppStore/AriaNgGUI/AriaNgGUI.apk"
+}
