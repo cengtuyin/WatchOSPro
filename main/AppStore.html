@@ -40,6 +40,7 @@
         LoadAPPList();
     }, 1);
     function LoadAppInfo(id) {
+        if(applist[id].icon.substr(0, 4) != "http") applist[id].icon = ResURL+applist[id].icon;
         document.getElementById("tipsview_title").innerHTML = applist[id].name;
         document.getElementById("tipsview_icon").src=applist[id].icon;
         document.getElementById("loadview").style.display = "flex";
