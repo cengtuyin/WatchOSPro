@@ -100,6 +100,7 @@
             var view = "<mdui-card onclick='LoadAppInfo("+T_nowappid+");' variant='outlined' style='margin:0.5em 5% 0.5em 5%;padding:1em 1em 0.6em 1em;width:90%;display:flex;'><mdui-avatar style='width:3em;height:3em;' src='"+appdata.icon+"'></mdui-avatar><div style='margin-left:0.5em;display:block;'><h3 style='padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));'>"+appdata.name+"</h3><h5 style='padding:0;margin:0 0 0.4em 0;color:rgb(var(--mdui-color-on-surface-variant));'>"+description+"</h5>";
             if(appdata.label){
                 appdata.label.forEach(labeldata => {
+                    if(labeldata.icon.substr(0, 4) != "http") labeldata.icon = ResURL+labeldata.icon;
                     view = view+"<mdui-chip icon='"+labeldata.icon+"' style='margin:0.2em;'>"+labeldata.msg+"</mdui-chip>";
                 })
             }
