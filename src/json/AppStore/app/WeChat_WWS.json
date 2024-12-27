@@ -1,17 +1,17 @@
 {
     "name": "微信",
-    "icon": "http://watch.24h.fyi:90/img/AppStore/WeChat_WWS/icon.png",
+    "icon": "src/img/AppStore/WeChat_WWS/icon.png",
     "pak": "com.tencent.mm",
     "version name": "8.0.53",
     "version code": "1145",
     "app image": [
-        "http://watch.24h.fyi:90/img/AppStore/WeChat_WWS/App_1.png",
-        "http://watch.24h.fyi:90/img/AppStore/WeChat_WWS/App_2.png",
-        "http://watch.24h.fyi:90/img/AppStore/WeChat_WWS/App_3.png"
+        "src/img/AppStore/WeChat_WWS/App_1.png",
+        "src/img/AppStore/WeChat_WWS/App_2.png",
+        "src/img/AppStore/WeChat_WWS/App_3.png"
     ],
     "author": "因日落而息",
     "description": "微卫士最新系统上提取的微信，可以手机手表儿童微信三端同时登陆，微卫士用平板微信改的，目前大多数安卓手表都能直接下载安装，不需要额外操作，wearos系统自测，低版本安卓系统的自测，下载安装前需卸载原版微信，封号状况未知，建议用小号测试<br>来源于：酷安@因日落而息",
     "tbrief description":"微卫士提取，三端登录",
     "update time": "2024年11月25日",
-    "download url":"http://watch.24h.fyi:90/apk/AppStore/WeChat_WWS/WeChat_WWS.apk"
+    "download url":"src/apk/AppStore/WeChat_WWS/WeChat_WWS.apk"
 }
