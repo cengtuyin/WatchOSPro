@@ -45,13 +45,13 @@
         <mdui-navigation-drawer id="MainList" style="min-height:100vh;" close-on-overlay-click modal="false" class="example-navigation-drawer" contained>
             <mdui-list style="overflow-y: auto;">
                 <mdui-collapse accordion>
-                    <mdui-list-item icon="home" onclick="LoadMainUI('../html/main/index.html');">官网</mdui-list-item>
-                    <mdui-list-item icon="shop" onclick="LoadMainUI('../html/main/AppStore.html');">应用商店</mdui-list-item>
+                    <mdui-list-item icon="home" onclick="LoadMainUI('main/index.html');">官网</mdui-list-item>
+                    <mdui-list-item icon="shop" onclick="LoadMainUI('main/AppStore.html');">应用商店</mdui-list-item>
                     <mdui-collapse-item>
                         <mdui-list-item slot="header" icon="cloud" end-icon="arrow_right">云服务</mdui-list-item>
                         <div style="margin-left: 2.5rem">
-                            <mdui-list-item icon="speaker_notes" onclick="LoadMainUI('../html/main/login.html');">即时通知</mdui-list-item>
-                            <mdui-list-item icon="location_on" onclick="LoadMainUI('../html/main/Instantpositioning.html');">即时定位</mdui-list-item>
+                            <mdui-list-item icon="speaker_notes" onclick="LoadMainUI('main/login.html');">即时通知</mdui-list-item>
+                            <mdui-list-item icon="location_on" onclick="LoadMainUI('main/Instantpositioning.html');">即时定位</mdui-list-item>
                             <mdui-list-item icon="folder" onclick="NotOpenPrompt();">云盘</mdui-list-item>
                             <mdui-list-item icon="photo_size_select_actual" onclick="NotOpenPrompt();">相册</mdui-list-item>
                             <mdui-list-item icon="text_snippet" onclick="NotOpenPrompt();">笔记</mdui-list-item>
@@ -61,8 +61,8 @@
                     <mdui-collapse-item>
                         <mdui-list-item slot="header" icon="download" end-icon="arrow_right">下载</mdui-list-item>
                         <div style="margin-left: 2.5rem">
-                            <mdui-list-item icon="watch" onclick="LoadMainUI('../html/main/watchospro.html');">WatchOSPro</mdui-list-item>
-                            <mdui-list-item icon="phone_android" onclick="LoadMainUI('../html/main/mywatchospro.html');">MyWatchOSPro</mdui-list-item>
+                            <mdui-list-item icon="watch" onclick="LoadMainUI('main/watchospro.html');">WatchOSPro</mdui-list-item>
+                            <mdui-list-item icon="phone_android" onclick="LoadMainUI('main/mywatchospro.html');">MyWatchOSPro</mdui-list-item>
                             <mdui-list-item icon="web" onclick="NotOpenPrompt();">页面合集</mdui-list-item>
                             <mdui-list-item icon="settings" onclick="NotOpenPrompt();">插件</mdui-list-item>
                         </div>
@@ -76,11 +76,11 @@
                     <mdui-collapse-item>
                         <mdui-list-item slot="header" icon="help" end-icon="arrow_right">常见问题</mdui-list-item>
                         <div style="margin-left: 2.5rem">
-                            <mdui-list-item onclick="LoadMainUI('../html/main/QA/1.html');">无法连接到服务器</mdui-list-item>
+                            <mdui-list-item onclick="LoadMainUI('main/QA/1.html');">无法连接到服务器</mdui-list-item>
                             <mdui-list-item onclick="NotOpenPrompt();">无法打开原神</mdui-list-item>
                         </div>
                     </mdui-collapse-item>
-                    <mdui-list-item icon="info" onclick="LoadMainUI('../html/main/about.html');">关于</mdui-list-item>
+                    <mdui-list-item icon="info" onclick="LoadMainUI('main/about.html');">关于</mdui-list-item>
                 </mdui-collapse>
             </mdui-list>
         </mdui-navigation-drawer>
@@ -189,7 +189,7 @@
         }
 
 
-        LoadMainUI("../html/main/watchospro.html");
+        LoadMainUI("main/watchospro.html");
     </script>
 </body>
 
