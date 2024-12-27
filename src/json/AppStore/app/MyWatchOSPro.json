@@ -1,11 +1,11 @@
 {
     "name": "MyWatchOSPro",
-    "icon": "http://watch.24h.fyi:90/img/icon.png",
+    "icon": "src/img/icon.png",
     "pak": "com.My.WatchOS.Pro.yin",
     "version name": "alpha",
     "version code": "19",
     "app image": [
-        "http://watch.24h.fyi:90/img/WeChatPay.png"
+        "src/img/WeChatPay.png"
     ],
     "label": [
         {
@@ -20,5 +20,5 @@
     "author": "yin",
     "description": "手机与手表互联！没有官方、官方的不好用就自己做！超多功能～",
     "update time": "2024年11月7日",
-    "download url": "http://watch.24h.fyi:90/apk/AppStore/MyWatchOSPro/MyWatchOSPro.apk"
+    "download url": "src/apk/AppStore/MyWatchOSPro/MyWatchOSPro.apk"
 }
