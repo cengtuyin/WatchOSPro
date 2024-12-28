@@ -30,19 +30,22 @@
             letter-spacing: var(--mdui-typescale-headline-small-line-tracking);
             font-weight: var(--mdui-typescale-headline-small-line-weight);
         }
+        .TopUI {
+            position:fixed!important;
+        }
     </style>
 </head>
 
 <body style="margin:0;height:100vh;">
     <mdui-layout style="min-height:100vh;">
-        <mdui-top-app-bar variant="small" scroll-behavior="elevate" class="example-top-app-bar">
+        <mdui-top-app-bar class="TopUI" variant="small" scroll-behavior="elevate">
             <mdui-linear-progress id="loadingview" style="display:none;position: fixed;top: 0;left:0;z-index:999;width:100vw;height:0.2em;"></mdui-linear-progress>
             <mdui-button-icon icon="menu" id="openmenu"></mdui-button-icon>
             <mdui-top-app-bar-title>WatchOS</mdui-top-app-bar-title>
             <div style="flex-grow: 1"></div>
             <mdui-button-icon icon="more_vert"></mdui-button-icon>
         </mdui-top-app-bar>
-        <mdui-navigation-drawer id="MainList" style="min-height:100vh;" close-on-overlay-click modal="false" class="example-navigation-drawer" contained>
+        <mdui-navigation-drawer class="TopUI" id="MainList" style="min-height:100vh;" close-on-overlay-click modal="false" contained>
             <mdui-list style="overflow-y: auto;overflow-x:hidden;">
                 <mdui-collapse accordion>
                     <mdui-list-item icon="home" onclick="LoadMainUI('main/index.html');">官网</mdui-list-item>
