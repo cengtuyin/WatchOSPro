@@ -19,6 +19,10 @@ function Download() {
                 var json = httpRequest.responseText;
                 document.getElementById("loadview").style.display = "none";
                 dialog.description = json;
+            }else if(httpRequest.readyState == 4){
+                document.getElementById("loadview").style.display = "none";
+                dialog.description = "请求异常，无法加载";
+                //snackbar({message: "请求错误，请稍候重试",closeOnOutsideClick: true,autoCloseDelay: 1500});
             }
         };
     }, 500);
