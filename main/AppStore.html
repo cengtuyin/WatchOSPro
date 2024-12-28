@@ -17,12 +17,13 @@
 </mdui-dialog>
 <mdui-dialog id="uploadview" class="example-action" headline="上传应用" description="Loading">
     <div id="uploadview_loadview" style="width:100%;height:10vh;max-height:200px;min-height:100px;display: flex;justify-content: center;align-items: center;"><mdui-circular-progress></mdui-circular-progress></div>
-    <mdui-button slot="action" variant="text" onclick="dialog.open = false">取消</mdui-button>
-    <mdui-button slot="action" onclick="dialog.open = true">前往</mdui-button>
+    <mdui-button slot="action" variant="text" onclick="uploadview.open = false">取消</mdui-button>
+    <mdui-button slot="action" onclick="window.open('https://github.com/cengtuyin/WatchOSPro_AppStore_Example')">前往</mdui-button>
 </mdui-dialog>
 <script type="text/javascript">
     var dialog = document.getElementById("tipsview");
     var load_dialog = document.getElementById("load_tipsview");
+    var uploadview = document.getElementById("uploadview");
     var applist = [
         {
             "name":"WatchOSPro",
@@ -122,7 +123,6 @@
     }
 
     function PushApp(){
-        var uploadview = document.getElementById("uploadview");
         document.getElementById("uploadview_loadview").style.display = "flex";
         uploadview.open = true;
         setTimeout(() => {
