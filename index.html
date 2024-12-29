@@ -8,6 +8,7 @@
     <meta name="renderer" content="webkit" />
     <link rel="stylesheet" href="src/css/mdui.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://gw.alipayobjects.com/os/lib/lottie-web/5.5.6/build/player/lottie.min.js"></script>
     <script src="src/js/mdui.global.js"></script>
     <script type="text/javascript" src="src/js/md5.js"></script>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -139,7 +140,18 @@
                     document.getElementById("main").innerHTML=ui;
                     codejstemp=LoadJS();
                 }else if(httpRequest.readyState == 4){
-                    document.getElementById("main").innerHTML="请求异常，无法加载界面";
+                    document.getElementById("main").innerHTML="<div id='container'></div>请求异常，无法加载界面";
+                    var anim = lottie.loadAnimation({
+                      container: document.getElementById("container"), // 容器
+                      renderer: "svg",
+                      loop: true,
+                      autoplay: true,
+                      // animationData: {}, //如果使用的是JSON
+                      path:"./src/lottie/networkerror.json" // the path to the animation json
+                    });
+                    anim.onLoopComplete = function() {
+                        anim.stop();
+                    }
                     //snackbar({message: "请求错误，请稍候重试",closeOnOutsideClick: true,autoCloseDelay: 1500});
                 }
                 switch (type) {
