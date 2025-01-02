@@ -26,6 +26,17 @@
     <div style="margin-left:0.5em;display:block;">
         <h3 style="padding:0;margin:0 0 0.2em 0;color:rgb(var(--mdui-color-on-surface-variant));">银</h3>
         <h5 style="padding:0;margin:0 0 0.4em 0;color:rgb(var(--mdui-color-on-surface-variant));">负责：前端、后端、软件、审核、设计、管理、运营、宣传、⭕️💰</h5>
-        <mdui-chip icon="people" style="margin:0.2em;" onclick="event.stopPropagation();document.getElementById('zwms').open=true;">土匪头目</mdui-chip><mdui-chip icon="add" style="margin:0.2em;" onclick="event.stopPropagation();document.getElementById('hz').open=true;">合作</mdui-chip>
+        <mdui-chip icon="people" style="margin:0.2em;" onclick="zwms(this,0)">土匪头目</mdui-chip><mdui-chip icon="add" style="margin:0.2em;" onclick="hz(this,0)">合作</mdui-chip>
     </div>
 </mdui-card>
+
+<script type="text/JavaScript">
+    function zwms(event,id){
+        event.stopPropagation();
+        document.getElementById('zwms').open=true;
+    }
+    function hz(event,id){
+        event.stopPropagation();
+        document.getElementById('hz').open=true;
+    }
+</script>
