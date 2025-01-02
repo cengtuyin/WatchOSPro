@@ -44,7 +44,13 @@
             <mdui-button-icon icon="menu" id="openmenu"></mdui-button-icon>
             <mdui-top-app-bar-title>WatchOS</mdui-top-app-bar-title>
             <div style="flex-grow: 1"></div>
-            <mdui-button-icon icon="more_vert"></mdui-button-icon>
+            <mdui-dropdown style="margin:1% 1% 1% auto">
+              <mdui-button-icon variant="filled" icon="more_vert" slot="trigger"></mdui-button-icon>
+              <mdui-menu>
+                  <mdui-menu-item><mdui-icon slot="icon" name="border_color"></mdui-icon>设置密码</mdui-menu-item>
+                  <mdui-menu-item><mdui-icon slot="icon" name="user"></mdui-icon>账号设置</mdui-menu-item>
+              </mdui-menu>
+            </mdui-dropdown>
         </mdui-top-app-bar>
         <mdui-navigation-drawer class="TopUI" id="MainList" style="min-height:100vh;" close-on-overlay-click modal="false" contained>
             <mdui-list style="overflow-y: auto;overflow-x:hidden;">
@@ -56,6 +62,7 @@
                         <div style="margin-left: 2.5rem">
                             <mdui-list-item icon="speaker_notes" onclick="LoadMainUI('main/Instantnotifications.html');">即时通知</mdui-list-item>
                             <mdui-list-item icon="location_on" onclick="LoadMainUI('main/Instantpositioning.html');">即时定位</mdui-list-item>
+                            <mdui-list-item icon="location_on" onclick="LoadMainUI('main/Instantpositioning.html');">设备查找</mdui-list-item>
                             <mdui-list-item icon="folder" onclick="LoadMainUI('main/clouddisks.html');">云盘</mdui-list-item>
                             <mdui-list-item icon="photo_size_select_actual" onclick="LoadMainUI('main/cloudalbum.html');">相册</mdui-list-item>
                             <mdui-list-item icon="text_snippet" onclick="NotOpenPrompt();">笔记</mdui-list-item>
